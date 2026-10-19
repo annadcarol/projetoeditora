@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ============================================
+   Tokens do design system
+   ============================================ */
+:root {
+  --verde: #B9C255;
+  --verde-escuro: #A3AC45;
+  --azul: #5798D7;
+  --azul-escuro: #3F7DBA;
+  --azul-claro: #E6F1FA;
+  --texto: #1F2A37;
+  --texto-suave: #5B6770;
+  --borda: #D3E2F0;
+  --branco: #FFFFFF;
+  --raio: 4px;
+}
+
+/* ============================================
+   Base
+   ============================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--texto);
+  background-color: var(--azul-claro);
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.15rem; margin-bottom: 1rem; }
+
+a { color: var(--azul-escuro); }
+a:hover { color: var(--azul); }
+
+.text-muted { color: var(--texto-suave) !important; }
+
+/* Espaço ao redor do conteúdo das telas */
+.submit-form,
+.list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   Navbar (caso exista no App)
+   ============================================ */
+.navbar {
+  background-color: var(--branco) !important;
+  border-bottom: 2px solid var(--azul);
+  box-shadow: none;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  font-weight: 500;
+  color: var(--texto) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--azul-escuro) !important;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--azul);
+  border-radius: var(--raio);
+  box-shadow: 0 1px 2px rgba(31, 42, 55, 0.06);
+}
+
+.card.shadow-sm {
+  box-shadow: 0 1px 2px rgba(31, 42, 55, 0.06) !important;
+}
+
+/* Detalhes do artigo: rótulos em destaque */
+.card label {
+  color: var(--texto-suave);
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.card > div {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Formulários
+   ============================================ */
+label {
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.form-control,
+.form-select {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 0.55rem 0.75rem;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: #8A98A5;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(87, 152, 215, 0.2);
+  outline: none;
+}
+
+/* ============================================
+   Botões
+   ============================================ */
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: var(--raio);
+  padding: 0.5rem 1.1rem;
+  box-shadow: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(87, 152, 215, 0.25);
+}
+
+/* Salvar / Cadastrar novo: verde com texto escuro (melhor contraste) */
+.btn-success {
+  background-color: var(--verde);
+  border-color: var(--verde);
+  color: var(--texto);
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  background-color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  color: var(--texto);
+}
+
+/* Pesquisar */
+.btn-outline-secondary {
+  background-color: var(--branco);
+  border-color: var(--azul);
+  color: var(--azul-escuro);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+  background-color: var(--azul);
+  border-color: var(--azul);
+  color: var(--branco);
+}
+
+/* Editar */
+.btn-warning {
+  background-color: var(--azul);
+  border-color: var(--azul);
+  color: var(--branco);
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+  background-color: var(--azul-escuro);
+  border-color: var(--azul-escuro);
+  color: var(--branco);
+}
+
+/* Excluir: continua vermelho para indicar ação destrutiva, mas mais sóbrio */
+.btn-danger {
+  background-color: transparent;
+  border: 1px solid #C0503F;
+  color: #C0503F;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: #C0503F;
+  border-color: #C0503F;
+  color: var(--branco);
+}
+
+/* Barra de pesquisa: input e botão alinhados */
+.input-group > .form-control {
+  border-radius: var(--raio) 0 0 var(--raio);
+}
+
+.input-group > .btn {
+  border-radius: 0 var(--raio) var(--raio) 0;
+}
+
+/* ============================================
+   Lista de artigos
+   ============================================ */
+.list-group {
+  border-radius: var(--raio);
+  border: 1px solid var(--borda);
+  background-color: var(--branco);
+  overflow: hidden;
+}
+
+.list-group-item {
+  background-color: var(--branco);
+  color: var(--texto);
+  border: none;
+  border-bottom: 1px solid var(--borda);
+  border-left: 3px solid transparent;
+  padding: 0.75rem 1rem;
+  border-radius: 0 !important;
+  transition: background-color 0.15s ease;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item:hover {
+  background-color: var(--azul-claro);
+}
+
+/* Item selecionado: fundo claro + barra azul à esquerda */
+.list-group-item.active {
+  background-color: var(--azul-claro);
+  color: var(--texto);
+  font-weight: 500;
+  border-color: var(--borda);
+  border-left: 3px solid var(--azul);
+}
+
+/* ============================================
+   Alertas
+   ============================================ */
+.alert {
+  font-size: 0.92rem;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.alert-success {
+  background-color: #F4F6DF;
+  border-color: var(--verde);
+  color: var(--texto);
+}
+
+.alert-success h4 {
+  margin-bottom: 0;
+}
+
+.alert-danger {
+  background-color: #FBECE9;
+  border-color: #E5B1A9;
+  color: #8A2E20;
+}
